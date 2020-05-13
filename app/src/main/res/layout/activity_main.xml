@@ -8,55 +8,62 @@
 
 
     <Button
-        android:id="@+id/broadcast"
-        android:layout_width="201dp"
-        android:layout_height="67dp"
-        android:onClick="broadcast"
-        android:text="braodcast_eddyurl"
+        android:id="@+id/startBroadcasting"
+        android:layout_width="248dp"
+        android:layout_height="78dp"
+        android:layout_margin="8dp"
+        android:background="@drawable/custom_button"
+        android:onClick="startBroadcasting"
+        android:text="Start Broadcasting"
+        android:textAllCaps="false"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/broadcastingGif"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.886" />
 
-    <EditText
-        android:id="@+id/mobileno"
-        android:layout_width="261dp"
-        android:layout_height="56dp"
-        android:ems="10"
-        android:hint="Registered Mobile No."
-        android:inputType="number"
-        app:layout_constraintBottom_toTopOf="@+id/broadcast"
-        app:layout_constraintEnd_toEndOf="@+id/broadcast"
-        app:layout_constraintHorizontal_bias="0.516"
-        app:layout_constraintStart_toStartOf="@+id/broadcast"
-        />
 
-    <Button
-        android:id="@+id/create_ibeacon"
-        android:layout_width="173dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="148dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="155dp"
-        android:layout_marginBottom="107dp"
-        android:onClick="create_ibeacon"
-        android:text="create_ibeacon"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/broadcastingGif"
+        android:layout_width="369dp"
+        android:layout_height="293dp"
+        android:src="@drawable/final_logo"
+        app:layout_constraintBottom_toTopOf="@+id/startBroadcasting"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/uuids" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.603" />
+
+    <ImageView
+        android:id="@+id/redButton"
+        android:layout_width="263dp"
+        android:layout_height="231dp"
+        app:layout_constraintBottom_toTopOf="@+id/broadcastingGif"
+        app:layout_constraintEnd_toStartOf="@+id/broadcastingGif"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/broadcastingGif"
+        app:layout_constraintTop_toBottomOf="@+id/broadcastingGif"
+        app:srcCompat="@drawable/red" />
 
     <TextView
-        android:id="@+id/uuids"
-        android:layout_width="261dp"
-        android:layout_height="164dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/create_ibeacon"
+        android:id="@+id/merchantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Error "
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/broadcast" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.088" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
