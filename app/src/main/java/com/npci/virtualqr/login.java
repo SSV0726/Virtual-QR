@@ -12,8 +12,8 @@ import android.widget.Toast;
 public class login extends AppCompatActivity {
 
     public  void openSignUpActivity(View view){
-        Intent signup = new Intent(getApplicationContext(),signup.class);
-        startActivity(signup);
+        Intent maps = new Intent(getApplicationContext(),MapsActivity.class);
+        startActivity(maps);
 
     }
 
