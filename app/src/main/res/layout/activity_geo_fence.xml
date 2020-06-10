@@ -1,9 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/map"
-    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".geoFence" />
+    tools:context=".MapsActivity">
+
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        tools:context=".MapsActivity" />
+
+    <Button
+        android:id="@+id/success"
+        android:layout_width="331dp"
+        android:layout_height="67dp"
+        android:background="@drawable/custom_button"
+        android:onClick="success"
+        android:text="Use This Location To Register Shop"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.498"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.968" />
+
+
+    <TextView
+        android:id="@+id/geofenceradius"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="544dp"
+        android:layout_marginBottom="40dp"
+        android:text=""
+        map:layout_constraintBottom_toTopOf="@+id/register"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="@+id/map"
+        map:layout_constraintVertical_bias="0.966" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="407dp"
+        android:layout_height="55dp"
+        android:gravity="center"
+        map:layout_constraintBottom_toBottomOf="parent"
+        map:layout_constraintEnd_toEndOf="parent"
+        map:layout_constraintHorizontal_bias="0.0"
+        map:layout_constraintStart_toStartOf="parent"
+        map:layout_constraintTop_toTopOf="parent"
+        map:layout_constraintVertical_bias="0.863">
+
+        <Button
+            android:id="@+id/sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blackbutton"
+            android:text=" - "
+            android:layout_marginHorizontal="10dp"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:onClick="onclickSub"
+            tools:layout_editor_absoluteX="219dp"
+            tools:layout_editor_absoluteY="579dp" />
+
+        <Button
+            android:id="@+id/addd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/blackbutton"
+            android:onClick="onclickAdd"
+            android:layout_marginHorizontal="10dp"
+            android:text=" + "
+            android:textColor="#fff"
+            android:textSize="30dp"
+            tools:layout_editor_absoluteX="111dp"
+            tools:layout_editor_absoluteY="581dp" />
+
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

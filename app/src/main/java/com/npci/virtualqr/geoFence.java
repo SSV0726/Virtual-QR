@@ -7,11 +7,17 @@ import androidx.fragment.app.FragmentActivity;
 
 import android.Manifest;
 import android.app.PendingIntent;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.SeekBar;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingClient;
@@ -35,12 +41,41 @@ public class geoFence extends FragmentActivity implements OnMapReadyCallback, Go
     private GeofencingClient geofencingClient;
     private geofenceHelper geofenceHelper;
 
+    private  LatLng longclickLatlong ;
+    private Button sub;
+    private Button add;
     private float GEOFENCE_RADIUS = 80;
     private String GEOFENCE_ID = "SOME_GEOFENCE_ID";
-
+    private SeekBar seekBar;
     private int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
 
+    public void onclickAdd(View view){
+            GEOFENCE_RADIUS = GEOFENCE_RADIUS + 3;
+
+            TextView val = findViewById(R.id.geofenceradius);
+        val.setText(" Radius : " +  Float.toString(GEOFENCE_RADIUS) + "m");
+
+            handleMapLongClick(longclickLatlong);
+
+
+    }
+
+    public void onclickSub(View view){
+
+        if(GEOFENCE_RADIUS > 5) {
+            GEOFENCE_RADIUS = GEOFENCE_RADIUS - 3;
+
+            TextView val = findViewById(R.id.geofenceradius);
+            val.setText(" Radius : " +  Float.toString(GEOFENCE_RADIUS) + "m");
+
+            handleMapLongClick(longclickLatlong);
+        }
+    }
+
+    public void success(View view){
+        startActivity(new Intent(this,SuccessfullyRegistered.class));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +88,8 @@ public class geoFence extends FragmentActivity implements OnMapReadyCallback, Go
         Log.i("mylogs", "Inside geofence activity ");
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new geofenceHelper(this);
+
+        longclickLatlong = new LatLng(18.5621, 73.9167);
 
     }
 
@@ -76,7 +113,9 @@ public class geoFence extends FragmentActivity implements OnMapReadyCallback, Go
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(phoenix, 16));
 
         enableUserLocation();
+
         mMap.setOnMapLongClickListener(this);
+
     }
 
 
@@ -123,6 +162,9 @@ public class geoFence extends FragmentActivity implements OnMapReadyCallback, Go
     @Override
     public void onMapLongClick(LatLng latLng) {
         Log.i("mylogs", "onMapLongClick Presses ");
+
+        longclickLatlong = latLng;
+
         if (Build.VERSION.SDK_INT >= 29) {
             //We need background permission
             if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_BACKGROUND_LOCATION) == PackageManager.PERMISSION_GRANTED) {

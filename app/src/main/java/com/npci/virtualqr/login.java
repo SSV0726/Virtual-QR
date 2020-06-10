@@ -12,8 +12,8 @@ import android.widget.Toast;
 public class login extends AppCompatActivity {
 
     public  void openSignUpActivity(View view){
-        Intent geoFence = new Intent(getApplicationContext(),geoFence.class);
-        startActivity(geoFence);
+        Intent signup = new Intent(getApplicationContext(),signup.class);
+        startActivity(signup);
 
     }
 
