@@ -19,17 +19,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.367" />
 
-<!--    <pl.droidsonroids.gif.GifImageView-->
-<!--        android:id="@+id/broadcastingGif"-->
-<!--        android:layout_width="369dp"-->
-<!--        android:layout_height="293dp"-->
-<!--        android:src="@drawable/final_logo"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.38"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.303" />-->
+    <ImageView
+        android:id="@+id/broadcastingGif"
+        android:layout_width="369dp"
+        android:layout_height="293dp"
+        android:src="@drawable/start"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.38"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.303" />
 
     <TextView
         android:id="@+id/Appname"
