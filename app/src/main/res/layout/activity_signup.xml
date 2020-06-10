@@ -8,12 +8,88 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="SignUP Page"
+        android:layout_width="118dp"
+        android:layout_height="42dp"
+        android:text="SignUp"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.071" />
+
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="299dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="64dp"
+        android:ems="10"
+        android:hint="Username"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <EditText
+        android:id="@+id/mobile"
+        android:layout_width="306dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Mobile"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/username"
+        app:layout_constraintStart_toStartOf="@+id/username"
+        app:layout_constraintTop_toBottomOf="@+id/username" />
+
+    <EditText
+        android:id="@+id/VPA"
+        android:layout_width="303dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="VPA"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/mobile"
+        app:layout_constraintStart_toStartOf="@+id/mobile"
+        app:layout_constraintTop_toBottomOf="@+id/mobile" />
+
+    <EditText
+        android:id="@+id/pin"
+        android:layout_width="302dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Pin"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/VPA"
+        app:layout_constraintStart_toStartOf="@+id/VPA"
+        app:layout_constraintTop_toBottomOf="@+id/VPA" />
+
+    <EditText
+        android:id="@+id/pin2"
+        android:layout_width="300dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="28dp"
+        android:ems="10"
+        android:hint="Verify - Pin"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="@+id/pin"
+        app:layout_constraintStart_toStartOf="@+id/pin"
+        app:layout_constraintTop_toBottomOf="@+id/pin" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="275dp"
+        android:layout_height="73dp"
+        android:layout_marginTop="36dp"
+        android:background="@drawable/custom_button"
+        android:text="Register"
+        app:layout_constraintEnd_toEndOf="@+id/pin2"
+        app:layout_constraintStart_toStartOf="@+id/pin2"
+        app:layout_constraintTop_toBottomOf="@+id/pin2" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

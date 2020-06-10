@@ -30,7 +30,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     LocationManager locationManager;
 
     public void register(View view){
-
         Intent signup = new Intent(getApplicationContext(),signup.class);
         startActivity(signup);
     }
@@ -45,7 +44,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
     }
 
-
+ 
     /**
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
