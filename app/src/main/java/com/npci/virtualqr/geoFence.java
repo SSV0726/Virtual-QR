@@ -74,7 +74,36 @@ public class geoFence extends FragmentActivity implements OnMapReadyCallback, Go
     }
 
     public void success(View view){
-        startActivity(new Intent(this,SuccessfullyRegistered.class));
+
+
+        // Get Username from the SIGNUP-Intent
+        // get GEOCFENCE_RADIUS and longclicklatlong values
+        // pass teh values to an API - Preferring Microservices Architecture
+
+        /// boolean apiResponse = call the url passing above mention fields
+        int apiResponse = 1 ;
+
+        // Logic to CHeck How to proceed with the values API
+        //        To put it more precisely , if a user has onboarded with XYZ  in a geofence location of 35m (radius ) ,
+        //
+        //                then no other user can be onboarded with the same name XYZ in that region of  ( radius +  buffer ).
+        //
+        //
+        //                Where ,
+        //
+        //                Buffer = K * max_range_of Beacon(  where K >= 2 for safe side , range of beacon = 100m )
+
+
+        if(apiResponse == 1){
+            startActivity(new Intent(this,SuccessfullyRegistered.class));
+        }else{
+
+            Toast.makeText( this , " SomeOne Already Registered with this name " , Toast.LENGTH_LONG );
+            //startActivity(new Intent(this , registerError.class));
+        }
+
+
+
     }
 
     @Override
